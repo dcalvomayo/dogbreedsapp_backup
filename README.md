@@ -36,7 +36,7 @@ and open a browser with the following value on the url:
   - **templates**: Folder.
     - **index.html**: Html code containing the front-end of the app.
 **face_detector**: Folder containing the xml file used by the face detector.
-**images**: Folder containing pictures that can be used to test the app. Some of them are used by the Jupyter notebook.
+**images**: Folder containing pictures that can be used to test the app. In particular, the ones inside validation_imgs correpond to the images used in Part 6 of the notebook to validate the algorithm. Please note that some of the images in images folder are used by the Jupyter notebook.
 **run.py**: Python script to start the app.
 **saved_models**: Folder containing the weighted factors used by the CNN.
 **wrangling_scripts**: Folder.
@@ -55,9 +55,15 @@ You may take any code, but don't forget to cite the source. Take into account th
 Images obtained from the following sources:
 
 https://www.lavanguardia.com/mascotas/20220326/8154265/son-razas-perro-mas-bonitas-mundo-nbs.html#foto-1
+
 https://es.wikipedia.org/wiki/Familia_Airbus_A320#/media/Archivo:Lufthansa_Airbus_A320-211_D-AIQT_01.jpgV
+
 https://www.eluniverso.com/noticias/internacional/corea-del-norte-califica-como-viejo-senil-a-joe-biden-nota/
+
 https://ca.wikipedia.org/wiki/Ronaldo_de_Assis_Moreira
+
 https://twitter.com/sanchezcastejon
+
 https://es.wikipedia.org/wiki/Familia_Airbus_A320#/media/Archivo:Lufthansa_Airbus_A320-211_D-AIQT_01.jpg
+
 https://unsplash.com/photos/eWqOgJ-lfiI
