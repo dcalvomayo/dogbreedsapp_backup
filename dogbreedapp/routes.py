@@ -1,5 +1,4 @@
 from dogbreedapp import app
-import json, plotly
 from flask import render_template, request, redirect
 from flask import send_from_directory
 from wrangling_scripts.CNN_functions import Resnet50_full_algorithm
@@ -19,12 +18,11 @@ def upload_file():
     if request.files:
         image = request.files["image"]
         image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
-        print("Image saved")
+        #print("Image saved")
         img_path = '/images/' + image.filename
         text = Resnet50_full_algorithm('dogbreedapp/images/' + image.filename)
-        print(text)
+        #print(text)
         return render_template('index.html', value=text, img_path=img_path)
-        #return redirect('/')
 
 @app.route('/images/<path:filename>')
 def download_file(filename):
