@@ -151,12 +151,11 @@ Non-trainable params: 0
 
 - Model 2: We also create another convolutional neural network, but this time we take advantage of a well known architecture that has been trained with a large database that even includes dog breeds, which is ResNet50. Because of the similarity that ImageNet database has with our images, standard practice is to use almost all of the trained network, and only retrain the very last layers. Therefore, we will use all the network up to the last convolutional layer, and add only a max_pooling2d layer and a global_average_pooling2d layer before the fully connected layer that will be activated with a 'relu' activation function in the same way as in the network that we created from scratch. This is how the structure looks like:
 
-Layer (type)                 Output Shape              Param #   
-=================================================================
-global_average_pooling2d_3 ( (None, 2048)              0         
-_________________________________________________________________
-dense_3 (Dense)              (None, 133)               272517    
-=================================================================
+| Layer (type) | Output Shape | Param |   
+|--------------|--------------|-------|
+| global_average_pooling2d_3 | (None, 2048) | 0 |         
+| dense_3 (Dense) | (None, 133) | 272517 |    
+
 Total params: 272,517
 Trainable params: 272,517
 Non-trainable params: 0
@@ -167,29 +166,19 @@ Building Model 1 it was observed that the activation function used on the fully 
 
 Also, the number of layers is explored. Instead of using 3 convolutional layers, one more was added modifying the number of filters. So that the structure was the following:
 
-_________________________________________________________________
-Layer (type)                 Output Shape              Param #   
-=================================================================
-conv2d_4 (Conv2D)            (None, 223, 223, 8)       104       
-_________________________________________________________________
-max_pooling2d_5 (MaxPooling2 (None, 111, 111, 8)       0         
-_________________________________________________________________
-conv2d_5 (Conv2D)            (None, 110, 110, 16)      528       
-_________________________________________________________________
-max_pooling2d_6 (MaxPooling2 (None, 55, 55, 16)        0         
-_________________________________________________________________
-conv2d_6 (Conv2D)            (None, 54, 54, 32)        2080      
-_________________________________________________________________
-max_pooling2d_7 (MaxPooling2 (None, 27, 27, 32)        0         
-_________________________________________________________________
-conv2d_7 (Conv2D)            (None, 26, 26, 64)        8256      
-_________________________________________________________________
-max_pooling2d_8 (MaxPooling2 (None, 13, 13, 64)        0         
-_________________________________________________________________
-global_average_pooling2d_2 ( (None, 64)                0         
-_________________________________________________________________
-dense_2 (Dense)              (None, 133)               8645      
-=================================================================
+| Layer (type) | Output Shape | Param |
+| ------------ | ------------ | ----- |   
+| conv2d_4 (Conv2D) | (None, 223, 223, 8) | 104 |       
+| max_pooling2d_5 (MaxPooling2) | (None, 111, 111, 8) | 0 |         
+| conv2d_5 (Conv2D) | (None, 110, 110, 16) | 528 |       
+| max_pooling2d_6 (MaxPooling2) | (None, 55, 55, 16) | 0 |         
+| conv2d_6 (Conv2D) | (None, 54, 54, 32) | 2080 |      
+| max_pooling2d_7 (MaxPooling2) | (None, 27, 27, 32) | 0 |        
+| conv2d_7 (Conv2D) | (None, 26, 26, 64) | 8256 |      
+| max_pooling2d_8 (MaxPooling2) | (None, 13, 13, 64) | 0 |        
+| global_average_pooling2d_2 | (None, 64) | 0 |         
+| dense_2 (Dense) | (None, 133) | 8645 |      
+
 Total params: 19,613
 Trainable params: 19,613
 Non-trainable params: 0
@@ -209,11 +198,12 @@ The models have been trained with 50 epoches and 20 steps per epoch.
 The results obtained with Model 1 and Model 2 have been collected in the following table. For the purpose of simplicity the modifications introduced in previous section are referred to with letters in the following way:
 
 | Model | Number of conv layers added | Activation at dense layer | Activation at convolutional layers | Time per epoch (s) | Accuracy (%) |
+| ----- | --------------------------- | ------------------------ | ----------------------------------- | ----------------- | --------------|
 | 1a | 3 | relu | softmax | 20s | 8.1 |
 | 1b | 3 | softmax | softmax | 40 | 2.5 |
 | 1c | 3 | relu | relu | 20 | 1.2 |
 | 1d | 4 | relu | softmax | 20 | 9.3 |
-| 2   | 0 | relu | - | 0.1 | 80 |
+| 2 | 0 | relu | - | 0.1 | 80 |
 
 ### Justification
 
