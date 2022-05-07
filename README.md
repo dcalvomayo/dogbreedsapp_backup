@@ -7,7 +7,7 @@ The goal is to build a dog breed classifier based on CNNs, and deploy it to a we
 
 In the end an accuracy of almost 82% is obtained in test data.
 
-### Instructions
+### Instructions for the app
 Apart from basic python libraries, the following packages are required:
 - tensorflow.keras which handles neural networks structures.
 - flask to handle the back-end of the app.
@@ -20,6 +20,15 @@ After installing required libraries, all is required is to run the following com
 and open a browser with the following value on the url:
 
 `http://0.0.0.0:3001/`
+
+### Instructions for the notebook
+A notebook that gives a more clear explanation of the steps followed to develop this classifier is included in the repository.
+
+However, extra files are required to run all the steps that can be downloaded from the following [link](https://drive.google.com/drive/folders/11_ovr-NxsLR2OVKa6kSxOlIDIUbuCBdd?usp=sharing).
+
+The files should be placed on the folder with the same name. Finally, the tar file inside /data should be decompressed by the following command:
+
+`tar -xf data_dog_human.tgz`
 
 ### Files description:
 **bottleneck_features**: Folder.
@@ -36,6 +45,7 @@ and open a browser with the following value on the url:
     - **index.html**: Html code containing the front-end of the app.
 **face_detector**: Folder containing the xml file used by the face detector.
 **images**: Folder containing pictures that can be used to test the app. In particular, the ones inside validation_imgs correpond to the images used in Part 6 of the notebook to validate the algorithm. Please note that some of the images in images folder are used by the Jupyter notebook.
+**notebook**: Folder containing the notebook that was used to develop the project.
 **run.py**: Python script to start the app.
 **saved_models**: Folder containing the weighted factors used by the CNN.
 **wrangling_scripts**: Folder.
@@ -70,8 +80,7 @@ The algorithm should proceed in the following way:
 
 For this case, since the focus of the problem is to learn about how to build CNN algorithms, we are going to keep it simple on the metrics so we will limit to compute the accuracy: number of times the algorithm assigns correctly a breed vs number of images that we analyze.
 
-It should be noted that if we want to have a better picture of the performance of our algorithm we should look into building confusion matrices which can be generalized to multi-class problems such as this. 
-https://towardsdatascience.com/comprehensive-guide-on-multiclass-classification-metrics-af94cfb83fbd
+It should be noted that if we want to have a better picture of the performance of our algorithm we should look into building confusion matrices which can be generalized to multi-class problems such as [this](https://towardsdatascience.com/comprehensive-guide-on-multiclass-classification-metrics-af94cfb83fbd).
 
 ## Analysis
 
@@ -79,7 +88,7 @@ https://towardsdatascience.com/comprehensive-guide-on-multiclass-classification-
 
 The data that we will use to build the model consists of 9148 images of dogs in .jpg format organized in folders named after the corresponding class that they belong to.
 
-The number of classes or dog breeds that we take into account is 133 and go from Affenpinscher to Yorkshire Terrier. This is less than what AKC recognizes (https://www.akc.org/press-center/articles-resources/facts-and-stats/breeds-year-recognized/), but even that it is a lower number, it is still an extraordinary classification task, especially when there are pairs of breeds such as Brittany and Welsh Springer Spaniel or Curly Coated Retriever and American Water Spaniel that are very similar, as shown in the notebook. Also, the number of images per breed oscillates between 38 and 101.
+The number of classes or dog breeds that we take into account is 133 and go from Affenpinscher to Yorkshire Terrier. This is less than what [AKC recognizes](https://www.akc.org/press-center/articles-resources/facts-and-stats/breeds-year-recognized/), but even that it is a lower number, it is still an extraordinary classification task, especially when there are pairs of breeds such as Brittany and Welsh Springer Spaniel or Curly Coated Retriever and American Water Spaniel that are very similar, as shown in the notebook. Also, the number of images per breed oscillates between 38 and 101.
 
 We also have around 24000 images of different human beings that are organized in the same way, so that they could be used to classify images depending on the person contained on it. For our purpose we will use them to test how our algorithm distinguishes between humans and dogs.
 
@@ -107,15 +116,12 @@ For being able to utilize the data we need to convert it to a format that can be
 
 2. Convert to array: This is achieved with img_to_array that  and expand_dims to resize it so that all of the images can be integrated on the same tensor. Its dimension, taking into account that we have 3 channels, will be:
 
-$$
-(224, 224, 3).
-$$
+(224, 224, 3)
 
 3. Integrate all the images into one array: This is achieved with expand_dims that will expand each image into a 4D array so that they can be on the same array of dimension:
 
-$$
-(\text{nb_samples}, 224, 224, 3).
-$$
+(nb_samples, 224, 224, 3)
+
 
 4. Normalize the images by dividing by 255 which correspond to the number of values that any pixel can take.
 
@@ -199,7 +205,7 @@ The results obtained with Model 1 and Model 2 have been collected in the followi
 
 | Model | Number of conv layers added | Activation at dense layer | Activation at convolutional layers | Time per epoch (s) | Accuracy (%) |
 | ----- | --------------------------- | ------------------------ | ----------------------------------- | ----------------- | --------------|
-| 1a | 3 | relu | softmax | 20s | 8.1 |
+| 1a | 3 | relu | softmax | 20 | 8.1 |
 | 1b | 3 | softmax | softmax | 40 | 2.5 |
 | 1c | 3 | relu | relu | 20 | 1.2 |
 | 1d | 4 | relu | softmax | 20 | 9.3 |
