@@ -26,9 +26,13 @@ A notebook that gives a more clear explanation of the steps followed to develop 
 
 However, extra files are required to run all the steps that can be downloaded from the following [link](https://drive.google.com/drive/folders/11_ovr-NxsLR2OVKa6kSxOlIDIUbuCBdd?usp=sharing).
 
-The files should be placed on the folder with the same name. Finally, the tar file inside /data should be decompressed by the following command:
+The files should be placed on the folder with the same name, and the tar file inside /data should be decompressed by the following command:
 
 `tar -xf data_dog_human.tgz`
+
+Finally, to run the notebook a jupyter session is created **from the root directory**, otherwise the notebook won't be able to pick up files that are in a folder that is one level up:
+
+`jupyter notebook`
 
 ### Files description:
 **bottleneck_features**: Folder.
