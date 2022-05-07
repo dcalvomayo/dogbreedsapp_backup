@@ -13,7 +13,9 @@ Apart from basic python libraries, the following packages are required:
 - flask to handle the back-end of the app.
 - opencv-python to build the face detector.
 
-After installing required libraries, all is required is to run the following command:
+After installing required libraries, pre-computed bottleneck features from Resnet50 need to be downloaded from the following [link](https://drive.google.com/drive/folders/11_ovr-NxsLR2OVKa6kSxOlIDIUbuCBdd?usp=sharing) and placed on the folder with the same name.
+
+Finally, all is required is to run the following command
 
 `python run.py`
 
@@ -24,7 +26,7 @@ and open a browser with the following value on the url:
 ### Instructions for the notebook
 A notebook that gives a more clear explanation of the steps followed to develop this classifier is included in the repository.
 
-However, extra files are required to run all the steps that can be downloaded from the following [link](https://drive.google.com/drive/folders/11_ovr-NxsLR2OVKa6kSxOlIDIUbuCBdd?usp=sharing).
+However, extra in /data folder are required to run all the steps that can be downloaded from the following [link](https://drive.google.com/drive/folders/11_ovr-NxsLR2OVKa6kSxOlIDIUbuCBdd?usp=sharing).
 
 The files should be placed on the folder with the same name, and the tar file inside /data should be decompressed by the following command:
 
