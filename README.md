@@ -86,12 +86,15 @@ We also have around 24000 images of different human beings that are organized in
 ### Data Visualization
 
 Examples of images containing dogs of breed Collie are:
+
 <img src="images/Collie_03788.jpg" width="200"> | <img src="images/Collie_03789.jpg" width="200">
 
 Examples of images containing dogs of breed Doberman pinscher are:
+
 <img src="images/Doberman_pinscher_04184.jpg" width="200"> | <img src="images/Doberman_pinscher_04173.jpg" width="200">
 
 Examples of images containing humans are the following. For instance, we have Jessica alba with:
+
 <img src="images/Jessica_Alba_0001.jpg" width="200"> | <img src="images/Jessica_Alba_0002.jpg" width="200">
 
 ## Methodology
