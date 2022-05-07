@@ -114,7 +114,7 @@ Examples of images containing humans are the following. For instance, we have Je
 
 ### Data Preprocessing
 
-For being able to utilize the data we need to convert it to a format that can be handled by the library that we will use to build neural networks (Keras) https://keras.io/. We need to build a pipeline that covers the following steps. For that we will use the functions contained in images library of keras.
+For being able to utilize the data we need to convert it to a format that can be handled by the library that we will use to build neural networks [Keras)](https://keras.io/). We need to build a pipeline that covers the following steps. For that we will use the functions contained in images library of keras.
 
 1. Resize: In the previous section we saw that the images have different sizes, therefore we need to transform them so that we have the same number of pixels in both directions. This is achieved with load_img in which we can set parameter target_size to be (224,224) or what is the same: 224 pixels for both directions.
 
