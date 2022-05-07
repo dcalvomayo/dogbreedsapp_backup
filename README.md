@@ -135,7 +135,7 @@ This covers the second step, and we move now onto the third step which is for wh
 - Model 1: First, we will create a convolutional neural network from scratch. In image classification we are passing as input a fairly large amount of data expecting an output that is very small compared to the number of combinations of all the pixels of the image. Therefore, it makes sense to use a deep learning algorithm with several convolutional layers, since the geometrical information can be captured by these. The number of layers is going to be determined by a trade-off of the accuracy that we can get, and the time that we can afford to invest training it. We choose to use four convolutional layers at this stage since the idea is to learn how a convolutional layer is built from scratch, and we are targeting an accuracy of >1%. Also, we add MaxPooling layers in between to reduce the dimensionality in stages, so that the network can focus on other features as the data goes deeper in the network. Finally, we add a global average pooling layer that will map one field per category, and a fully connected layer just before the output. By trial and error it has been found that 'relu' activation function works better for the convolutional layers, while softmax does for the fully connected layer. This is how the structure looks like:
 
 | Layer (type) | Output Shape | Param |
------------------------------------
+| -------------|--------------| ----- |
 | conv2d_3 (Conv2D) | (None, 223, 223, 16) | 208 |      
 | max_pooling2d_3 (MaxPooling2) | (None, 111, 111, 16) | 0 |        
 | conv2d_4 (Conv2D) | (None, 110, 110, 32) | 2080 |      
